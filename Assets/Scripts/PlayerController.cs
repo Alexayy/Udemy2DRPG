@@ -6,9 +6,18 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public Animator animator;
 
+    public static PlayerController instance;
+
+    public string areaTransitionName;
+
     void Start()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
         
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
