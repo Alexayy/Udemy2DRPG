@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerLoader : MonoBehaviour
@@ -11,6 +9,6 @@ public class PlayerLoader : MonoBehaviour
         if (PlayerController.instance == null)
         {
             Instantiate(player);
-        }
+        } 
     }
 }
