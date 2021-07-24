@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 bottomLeftLimit;
     private Vector3 topRightLimit;
 
+    public bool canMove = true;
+
     void Start()
     {
         if (instance == null)
@@ -26,18 +28,28 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        rigidbody2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
-        
+        if (canMove)
+        {
+            rigidbody2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * moveSpeed;
+        }
+        else
+        {
+            rigidbody2D.velocity = Vector2.zero;
+        }
+
         animator.SetFloat("moveX", rigidbody2D.velocity.x);
         animator.SetFloat("moveY", rigidbody2D.velocity.y);
-
+        
         if (Input.GetAxisRaw("Horizontal") == 1 ||
             Input.GetAxisRaw("Horizontal") == -1 ||
             Input.GetAxisRaw("Vertical") == 1 ||
             Input.GetAxisRaw("Vertical") == -1)
         {
-            animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
-            animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            if (canMove)
+            {
+                animator.SetFloat("lastMoveX", Input.GetAxisRaw("Horizontal"));
+                animator.SetFloat("lastMoveY", Input.GetAxisRaw("Vertical"));
+            }
         }
         
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, bottomLeftLimit.x, topRightLimit.x), 
