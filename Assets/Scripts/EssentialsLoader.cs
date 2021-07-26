@@ -4,6 +4,7 @@ public class EssentialsLoader : MonoBehaviour
 {
     public GameObject UIScreen;
     public GameObject player;
+    public GameObject gameManager;
 
     private void Awake()
     {
@@ -16,6 +17,11 @@ public class EssentialsLoader : MonoBehaviour
         {
             var clone = Instantiate(player).GetComponent<PlayerController>();
             PlayerController.instance = clone;
+        }
+
+        if (GameManager.instance == null)
+        {
+            Instantiate(gameManager);
         }
     }
 }
