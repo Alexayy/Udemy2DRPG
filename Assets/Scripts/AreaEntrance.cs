@@ -15,5 +15,6 @@ public class AreaEntrance : MonoBehaviour
         }
         
         UIFade.instance.FadeFromBlack();
+        GameManager.instance.fadingScenes = false;
     }
 }
