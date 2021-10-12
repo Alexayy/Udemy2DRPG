@@ -111,6 +111,58 @@ MonoBehaviour:
   - {fileID: 2423142999440220283}
   - {fileID: 2423142999232605331}
   - {fileID: 2423142998824521854}
+  gameMenuOpen: 0
+  dialogActive: 0
+  fadingScenes: 0
+  itemsHeld:
+  - Wooden Sword
+  - Iron Armor
+  - HP Potion
+  - Iron Sword
+  - Iron Sword
+  - Iron Sword
+  - Iron Sword
+  - Leather Armor
+  - Iron Sword
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  - Mana Potion
+  numberOfItems: 05000000040000000300000000000000000000000200000000000000020000000000000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000
+  referenceItems:
+  - {fileID: 94175532880837402, guid: e6825995a633bf941bf404d040780b27, type: 3}
+  - {fileID: 3346269935424726258, guid: 75c89eed8df8d0546adec86edcbc2def, type: 3}
+  - {fileID: 504465627770268277, guid: a50b0892cd32ab04f8f56b3b312f2f0d, type: 3}
+  - {fileID: 7612268867672878328, guid: 1df9811e7ee25ed469cc7040af771a58, type: 3}
+  - {fileID: 5912178258267498049, guid: 736526dfa7c90ea43b5ba497562a7bc8, type: 3}
+  - {fileID: 6158622581513291715, guid: de1f4d811b297fc4a896646b7b0bd114, type: 3}
 --- !u!1 &2423142999232605329
 GameObject:
   m_ObjectHideFlags: 0
