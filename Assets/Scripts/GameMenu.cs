@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -29,6 +31,20 @@ public class GameMenu : MonoBehaviour
         statusExp;
 
     public Image statusImage;
+
+    public string selectedItem;
+    public Item activeItem;
+    public Text itemName, itemDescription, useButtonText;
+    
+    public static GameMenu Instance;
+
+    public GameObject itemCharChoiceMenu;
+    public Text[] itemCharChoiceNames;
+
+    private void Start()
+    {
+        Instance = this;
+    }
 
     // Update is called once per frame
     void Update()
@@ -89,6 +105,8 @@ public class GameMenu : MonoBehaviour
                 windows[i].SetActive(false);
             }
         }
+        
+        CloseItemCharChoice();
     }
 
     public void CloseMenu()
@@ -101,6 +119,8 @@ public class GameMenu : MonoBehaviour
         theMenu.SetActive(false);
 
         GameManager.instance.gameMenuOpen = false;
+
+        CloseItemCharChoice();
     }
 
     public void OpenStatus()
@@ -130,8 +150,8 @@ public class GameMenu : MonoBehaviour
         
         statusWeaponPower.text = _characterStats[selected].weaponPower.ToString();
         
-        if (_characterStats[selected].equippenItm != "")
-            statusArmorPower.text = _characterStats[selected].equippenItm;
+        if (_characterStats[selected].equippenArm != "")
+            statusArmorPower.text = _characterStats[selected].equippenArm;
         
         statusArmorPower.text = _characterStats[selected].armorPower.ToString();
         statusExp.text = ( _characterStats[selected].expToNextLevel[_characterStats[selected].playerLevel] -
@@ -141,11 +161,13 @@ public class GameMenu : MonoBehaviour
 
     public void ShowItems()
     {
+        GameManager.instance.SortItems();
+        
         for (int i = 0; i < itemButtons.Length; i++)
         {
             itemButtons[i].buttonValue = i;
  
-            if (GameManager.instance.itemsHeld[i] != "")
+            if (!string.IsNullOrEmpty(GameManager.instance.itemsHeld[i]))
             {
                 itemButtons[i].buttonImage.gameObject.SetActive(true);
                 itemButtons[i].buttonImage.sprite = GameManager.instance.GetItemDetails(GameManager.instance.itemsHeld[i]).itemSprite;
@@ -158,4 +180,49 @@ public class GameMenu : MonoBehaviour
             }
         }
     }
-}
+
+    public void SelectItem(Item newItem)
+    {
+        activeItem = newItem;
+        if (activeItem.isItem)
+        {
+            useButtonText.text = "Use";
+        } else if (activeItem.isArmor || activeItem.isWeapon)
+        {
+            useButtonText.text = "Equip";
+        }
+
+        itemName.text = activeItem.itemName;
+        itemDescription.text = activeItem.description;
+    }
+
+    public void DiscardItem()
+    {
+        if (activeItem != null)
+        {
+            GameManager.instance.RemoveItem(activeItem.itemName);
+        }
+    }
+
+    public void OpenItemCharChoice()
+    {
+        itemCharChoiceMenu.SetActive(true);
+
+        for (int i = 0; i < itemCharChoiceNames.Length; i++)
+        {
+            itemCharChoiceNames[i].text = GameManager.instance.playerStats[i].charName;
+            itemCharChoiceNames[i].transform.parent.gameObject.SetActive(GameManager.instance.playerStats[i].gameObject.activeInHierarchy); // what :o
+        }
+    }
+
+    public void CloseItemCharChoice()
+    {
+        itemCharChoiceMenu.SetActive(false);
+    }
+
+    public void UseItem(int selectedChar)
+    {
+        activeItem.Use(selectedChar);
+        CloseItemCharChoice();
+    }
+} 

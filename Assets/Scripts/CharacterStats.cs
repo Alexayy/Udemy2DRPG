@@ -22,7 +22,7 @@ public class CharacterStats : MonoBehaviour
     public int weaponPower;
     public int armorPower;
     public string equippednWpn;
-    public string equippenItm;
+    public string equippenArm;
     public Sprite characterImage;
 
     private void Start()

@@ -115,47 +115,47 @@ MonoBehaviour:
   dialogActive: 0
   fadingScenes: 0
   itemsHeld:
-  - Wooden Sword
-  - Iron Armor
+  - 
+  - 
   - HP Potion
-  - Iron Sword
-  - Iron Sword
-  - Iron Sword
-  - Iron Sword
+  - 
+  - 
+  - Iron Armor
+  - 
   - Leather Armor
+  - 
+  - 
+  - 
+  - 
+  - Wooden Sword
+  - 
+  - 
+  - 
   - Iron Sword
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  - Mana Potion
-  numberOfItems: 05000000040000000300000000000000000000000200000000000000020000000000000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  numberOfItems: 05000000040000000300000000000000000000000200000000000000020000000000000045000000450000004500000001000000450000004500000045000000010000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000450000004500000045000000
   referenceItems:
   - {fileID: 94175532880837402, guid: e6825995a633bf941bf404d040780b27, type: 3}
   - {fileID: 3346269935424726258, guid: 75c89eed8df8d0546adec86edcbc2def, type: 3}
