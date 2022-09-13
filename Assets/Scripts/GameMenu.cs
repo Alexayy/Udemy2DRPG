@@ -57,8 +57,8 @@ public class GameMenu : MonoBehaviour
             }
             else
             {
-                theMenu.SetActive(true);
                 UpdateMainStats();
+                theMenu.SetActive(true);
                 GameManager.instance.gameMenuOpen = true;
             }
         }
